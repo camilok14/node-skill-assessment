@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "start": "node src",
+    "test:unit": "jest",
+    "test:cov": "jest --coverage"
   },
   "author": "",
   "license": "ISC",
