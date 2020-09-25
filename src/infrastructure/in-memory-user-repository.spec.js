@@ -51,6 +51,12 @@ describe('In-Memory User Repository', () => {
     });
   });
 
+  it('should throw error id tries to update a user with not valid schema', () => {
+    expect(
+      () => { userRepository.updateUser({}); }
+    ).toThrow('"userName" is required');
+  });
+
   it('should allow me to delete a user', () => {
     userRepository.deleteUserByUserName('Payflow');
 
