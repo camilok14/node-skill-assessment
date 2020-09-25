@@ -7,6 +7,8 @@
     "start": "node src",
     "test:unit": "jest",
     "test:cov": "jest --coverage",
+    "test:functional": "concurrently -k -s first 'npm:newman' 'npm:start'",
+    "newman": "newman run postman-collection.json",
     "lint": "eslint \"{src}/**/*.js\" --no-fix"
   },
   "author": "",
@@ -17,9 +19,11 @@
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "eslint": "^7.9.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "newman": "^5.2.0"
   }
 }
