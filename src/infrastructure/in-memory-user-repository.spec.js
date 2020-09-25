@@ -64,4 +64,9 @@ describe('In-Memory User Repository', () => {
 
     expect(allUsers.length).toBe(0);
   });
+
+  it('should delete all users', () => {
+    userRepository.deleteAllUsers();
+    expect(userRepository.memory).toMatchObject({});
+  });
 });

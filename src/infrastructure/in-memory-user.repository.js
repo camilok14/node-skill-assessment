@@ -5,6 +5,10 @@ class InMemoryUserRepository {
     this.memory = {};
   }
 
+  deleteAllUsers() {
+    this.memory = {};
+  }
+
   findAllUsers() {
     return Object.values(this.memory);
   }
