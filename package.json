@@ -8,6 +8,7 @@
     "test:unit": "jest",
     "test:cov": "jest --coverage",
     "test:functional": "concurrently -k -s first 'npm:newman' 'npm:start'",
+    "test:mutation": "stryker run",
     "newman": "newman run postman-collection.json",
     "lint": "eslint \"{src}/**/*.js\" --no-fix"
   },
@@ -19,6 +20,9 @@
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
+    "@stryker-mutator/core": "^3.3.1",
+    "@stryker-mutator/javascript-mutator": "^3.3.1",
+    "@stryker-mutator/jest-runner": "^3.3.1",
     "concurrently": "^5.3.0",
     "eslint": "^7.9.0",
     "eslint-config-airbnb-base": "^14.2.0",
