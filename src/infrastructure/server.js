@@ -1,13 +1,14 @@
-const express = require('express')
-const InMemoryUserRepository = require('./in-memory-user.repository')
-const app = express()
+const express = require('express');
+const InMemoryUserRepository = require('./in-memory-user.repository');
 
-const userRepository = new InMemoryUserRepository()
+const app = express();
 
-const getUsersRoute = require('../routes/getUsers')(userRepository)
-const syncUsersRoute = require('../routes/syncUsers')(userRepository)
+const userRepository = new InMemoryUserRepository();
 
-app.get('/users', getUsersRoute)
-app.get('/users/sync', syncUsersRoute)
+const getUsersRoute = require('../routes/getUsers')(userRepository);
+const syncUsersRoute = require('../routes/syncUsers')(userRepository);
+
+app.get('/users', getUsersRoute);
+app.get('/users/sync', syncUsersRoute);
 
 exports.server = app;
