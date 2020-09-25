@@ -9,7 +9,8 @@ module.exports = {
   coverageAnalysis: 'off',
   mutate: [
     'src/**/*.js',
-    '!src/**/*spec.js'
+    '!src/**/*spec.js',
+    '!src/index.js'
   ],
   thresholds: {
     high: 95,

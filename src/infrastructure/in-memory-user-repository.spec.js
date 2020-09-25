@@ -40,7 +40,7 @@ describe('In-Memory User Repository', () => {
       email: 'tech@payflow.es'
     };
 
-    userRepository.updateUser(updateUser);
+    const result = userRepository.updateUser(updateUser);
     const user = userRepository.findByUserName(updateUser.userName);
 
     expect(user).toStrictEqual({
@@ -49,6 +49,7 @@ describe('In-Memory User Repository', () => {
       externalSource: 'payflow',
       email: 'tech@payflow.es'
     });
+    expect(result).toBe(true);
   });
 
   it('should throw error id tries to update a user with not valid schema', () => {
