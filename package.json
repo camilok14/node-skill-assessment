@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src",
     "test:unit": "jest",
-    "test:cov": "jest --coverage"
+    "test:cov": "jest --coverage",
+    "lint": "eslint \"{src}/**/*.js\" --no-fix"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +16,9 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
     "jest": "^26.0.1",
     "supertest": "^4.0.2"
   }

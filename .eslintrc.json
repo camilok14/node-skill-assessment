@@ -1,0 +1,37 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "mocha": true,
+    "es6": true
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "arrow-parens": [ "error", "as-needed" ],
+    "comma-dangle": "off",
+    "object-curly-newline": ["error", { "consistent": true }],
+    "indent": [2, 2],
+    "max-len": [2, 200]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.spec.js"
+      ],
+      "rules": {
+        "no-unused-expressions": "off",
+        "global-require": "off",
+        "import/no-dynamic-require": "off"
+      }
+    }
+  ]
+}
